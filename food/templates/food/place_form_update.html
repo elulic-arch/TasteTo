@@ -3,15 +3,15 @@
 
 {% block content %}
 <div class="container">
-    <h1>Add a New Place</h1>
+    <h1>Update Place</h1>
 
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
 
-        <button type="submit">Save</button>
+        <button type="submit">Update</button>
     </form>
 
-    <a href="{% url 'food:place_list' %}" class="back-link">Back</a>
+    <a href="{% url 'food:place_detail' object.pk %}" class="back-link">Cancel</a>
 </div>
 {% endblock %}

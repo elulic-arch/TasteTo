@@ -1,12 +1,20 @@
-{% extends "food/base.html" %}
+{% extends 'base.html' %}
 
 {% block content %}
-<h1>{{ object.name }}</h1>
+<div class="container">
+    <div class="detail-wrapper">
 
-<p>{{ object.description }}</p>
-<p><strong>Address:</strong> {{ object.address }}</p>
+        {% if place.image %}
+            <img src="{{ place.image.url }}" alt="{{ place.name }}">
+        {% endif %}
 
-<a href="{% url 'food:place_update' object.id %}">Edit</a> |
-<a href="{% url 'food:place_delete' object.id %}">Delete</a> |
-<a href="{% url 'food:place_list' %}">Back</a>
+        <h2>{{ place.name }}</h2>
+        <p>{{ place.description }}</p>
+        <p><strong>Location:</strong> {{ place.location }}</p>
+
+        <a class="btn" href="{% url 'place_update' place.pk %}">Edit</a>
+        <a class="btn btn-danger" href="{% url 'place_delete' place.pk %}">Delete</a>
+
+    </div>
+</div>
 {% endblock %}

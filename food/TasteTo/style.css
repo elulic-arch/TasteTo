@@ -1,0 +1,199 @@
+/* -----------------------------------
+   GLOBAL STYLES
+--------------------------------------*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+/* container wrapper */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* headings */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #111;
+}
+
+/* links */
+a {
+    text-decoration: none;
+    color: #0066cc;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* -----------------------------------
+   NAVBAR
+--------------------------------------*/
+
+.navbar {
+    background-color: #333;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar a {
+    color: white;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.navbar a:hover {
+    color: #ffbb33;
+}
+
+/* -----------------------------------
+   PLACE CARDS
+--------------------------------------*/
+
+.place-card {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.place-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.place-card img {
+    width: 160px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+/* -----------------------------------
+   BUTTONS
+--------------------------------------*/
+
+.btn {
+    display: inline-block;
+    background-color: #0066cc;
+    color: white !important;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #004a99;
+}
+
+/* delete button */
+.btn-danger {
+    background-color: #cc0000;
+}
+
+.btn-danger:hover {
+    background-color: #990000;
+}
+
+/* -----------------------------------
+   DETAIL PAGE
+--------------------------------------*/
+.detail-wrapper {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.detail-wrapper img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* -----------------------------------
+   FORMS (Create / Update / Login)
+--------------------------------------*/
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+form button,
+form .btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* -----------------------------------
+   LOGIN PAGE
+--------------------------------------*/
+
+.login-box {
+    max-width: 400px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+}
+
+/* -----------------------------------
+   RESPONSIVE DESIGN
+--------------------------------------*/
+
+@media (max-width: 700px) {
+    .place-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .place-card img {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 15px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+    }
+}

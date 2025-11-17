@@ -5,7 +5,7 @@ from .views import (
     PlaceDetailView,
     PlaceCreateView,
     PlaceUpdateView,
-    PlaceDeleteView,
+    PlaceDeleteView,   
 )
 
 app_name = "food"
@@ -17,3 +17,5 @@ urlpatterns = [
     path("place/<int:pk>/edit/", PlaceUpdateView.as_view(), name="place_update"),
     path("place/<int:pk>/delete/", PlaceDeleteView.as_view(), name="place_delete"),
 ]
+
+
