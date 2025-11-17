@@ -1,0 +1,12 @@
+{% extends "food/base.html" %}
+
+{% block content %}
+<h1>{{ object.name }}</h1>
+
+<p>{{ object.description }}</p>
+<p><strong>Address:</strong> {{ object.address }}</p>
+
+<a href="{% url 'food:place_update' object.id %}">Edit</a> |
+<a href="{% url 'food:place_delete' object.id %}">Delete</a> |
+<a href="{% url 'food:place_list' %}">Back</a>
+{% endblock %}
