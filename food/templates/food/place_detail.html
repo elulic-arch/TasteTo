@@ -10,10 +10,11 @@
 
         <h2>{{ place.name }}</h2>
         <p>{{ place.description }}</p>
-        <p><strong>Location:</strong> {{ place.location }}</p>
-
-        <a class="btn" href="{% url 'place_update' place.pk %}">Edit</a>
-        <a class="btn btn-danger" href="{% url 'place_delete' place.pk %}">Delete</a>
+        <p><strong>Address:</strong> {{ place.address }}</p>
+        <p><strong>Rating:</strong> {{ place.rating }}</p>
+    
+        <a class="btn" href="{% url 'food:place_update' place.pk %}">Edit</a>
+        <a class="btn btn-danger" href="{% url 'food:place_delete' place.pk %}">Delete</a>
 
     </div>
 </div>
