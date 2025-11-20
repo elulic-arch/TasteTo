@@ -1,21 +1,21 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ place.name }}{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="detail-wrapper">
+<div class="container detail-wrapper">
 
-        {% if place.image %}
-            <img src="{{ place.image.url }}" alt="{{ place.name }}">
-        {% endif %}
+    {% if place.image %}
+        <img src="{{ place.image.url }}" alt="{{ place.name }}">
+    {% endif %}
 
-        <h2>{{ place.name }}</h2>
-        <p>{{ place.description }}</p>
-        <p><strong>Address:</strong> {{ place.address }}</p>
-        <p><strong>Rating:</strong> {{ place.rating }}</p>
-    
-        <a class="btn" href="{% url 'food:place_update' place.pk %}">Edit</a>
-        <a class="btn btn-danger" href="{% url 'food:place_delete' place.pk %}">Delete</a>
+    <h2>{{ place.name }}</h2>
+    <p>{{ place.description }}</p>
+    <p><strong>Address:</strong> {{ place.address }}</p>
+    <p><strong>Rating:</strong> {{ place.rating }}</p>
 
-    </div>
+    <a class="btn" href="{% url 'food:place_update' place.pk %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'food:place_delete' place.pk %}">Delete</a>
 </div>
 {% endblock %}

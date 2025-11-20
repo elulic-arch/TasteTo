@@ -1,5 +1,7 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
+
+{% block title %}Update {{ place.name }}{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -8,10 +10,9 @@
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-
         <button type="submit">Update</button>
     </form>
 
-    <a href="{% url 'food:place_detail' object.pk %}" class="back-link">Cancel</a>
+    <a href="{% url 'food:place_detail' place.pk %}" class="back-link">Cancel</a>
 </div>
 {% endblock %}
