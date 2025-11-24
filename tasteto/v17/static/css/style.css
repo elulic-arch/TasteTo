@@ -1,0 +1,180 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* === COLORS === */
+:root {
+    --charcoal: #1c1c1c;
+    --gold: #d4af37;
+    --cream: #f8f5f0;
+}
+
+/* === BODY === */
+body {
+    background-color: var(--cream);
+    color: var(--charcoal);
+}
+
+/* === NAVBAR === */
+nav {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: var(--cream);
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* === HERO (Sunset) === */
+.hero {
+    height: 75vh;
+    background-image: url('/static/images/toronto_sunset.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 28, 28, 0.45); /* charcoal overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 180px 40px;
+    text-align: center;
+    color: var(--cream);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--charcoal);
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-gold:hover {
+    background: #b8962d;
+}
+
+/* === MARKET SECTION === */
+.market-section {
+    margin-top: 50px;
+    height: 350px;
+    background-image: url('/static/images/market_flowers.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.market-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 28, 28, 0.28);
+}
+
+.market-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 110px 40px;
+    color: var(--cream);
+}
+
+.market-content h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+/* HERO overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 28, 28, 0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #f8f5f0;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.btn-gold {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #d4af37;
+    color: #1c1c1c;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* MARKET section */
+.market-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 28, 28, 0.30);
+}
+
+.market-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-top: 120px;
+    color: #f8f5f0;
+}
+
+.market-content h2 {
+    font-size: 2.2rem;
+}
+.hero {
+    height: 75vh;
+    background-image: url("/static/images/toronto_sunset.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}

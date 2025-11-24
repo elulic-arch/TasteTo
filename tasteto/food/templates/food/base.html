@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TasteTo</title>
+
+    <!-- Correct static CSS path -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">TasteTo</div>
+
+        <div class="links">
+            <a href="/">Home</a>
+            <a href="#">Explore</a>
+            <a href="#">About</a>
+            <a href="#">Login</a>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
