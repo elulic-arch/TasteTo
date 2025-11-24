@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Places - TasteTo{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="hero-overlay">
+        <h1>TasteTo</h1>
+        <p>Discover Toronto's artisanal cafés, bakeries, and markets.</p>
+        <a class="btn hero-btn" href="#places">Browse Places</a>
+    </div>
+</section>
+
+<section class="container" id="places">
+    {% if places %}
+        <div class="place-grid">
+            {% for place in places %}
+                <article class="place-card">
+                    <div class="place-image-wrap">
+                        {% if place.image %}
+                            <img src="{{ place.image.url }}" alt="{{ place.name }}">
+                        {% else %}
+                            <img src="{% static 'images/food_placeholder.jpg' %}" alt="{{ place.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="place-card-body">
+                        <h2>{{ place.name }}</h2>
+
+                        {% if place.address %}
+                            <p class="place-meta">{{ place.address }}</p>
+                        {% endif %}
+
+                        {% if place.rating %}
+                            <p class="place-rating">⭐ {{ place.rating }} / 5</p>
+                        {% endif %}
+
+                        <a class="btn btn-sm" href="{% url 'food:place_detail' place.pk %}">View Details</a>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No places added yet.</p>
+    {% endif %}
+
+    <a class="btn add-btn" href="{% url 'food:place_create' %}">+ Add New Place</a>
+</section>
+
+{% endblock %}

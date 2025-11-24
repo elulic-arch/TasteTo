@@ -1,10 +1,8 @@
 {% extends "base.html" %}
-{% load static %}
-
 {% block title %}{{ place.name }}{% endblock %}
 
 {% block content %}
-<div class="container detail-wrapper">
+<div class="detail-wrapper">
 
     {% if place.image %}
         <img src="{{ place.image.url }}" alt="{{ place.name }}">
@@ -17,5 +15,6 @@
 
     <a class="btn" href="{% url 'food:place_update' place.pk %}">Edit</a>
     <a class="btn btn-danger" href="{% url 'food:place_delete' place.pk %}">Delete</a>
+
 </div>
 {% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ place.name }} - TasteTo{% endblock %}
+
+{% block content %}
+<section class="container detail-wrapper">
+
+    <div class="detail-image">
+        {% if place.image %}
+            <img src="{{ place.image.url }}" alt="{{ place.name }}">
+        {% else %}
+            <img src="{% static 'images/food_placeholder.jpg' %}" alt="{{ place.name }}">
+        {% endif %}
+    </div>
+
+    <div class="detail-body">
+        <h1>{{ place.name }}</h1>
+
+        {% if place.rating %}
+            <p class="detail-rating">
+                {% for i in "12345" %}
+                    {% if forloop.counter >= place.rating %}
+                        <span class="star filled">★</span>
+                    {% else %}
+                        <span class="star">☆</span>
+                    {% endif %}
+                {% endfor %}
+                <span class="rating-text">{{ place.rating }} / 5</span>
+            </p>
+        {% endif %}
+
+        {% if place.address %}
+            <p class="detail-meta"><strong>Address:</strong> {{ place.address }}</p>
+        {% endif %}
+
+        {% if place.description %}
+            <p class="detail-description">{{ place.description }}</p>
+        {% endif %}
+
+        <div class="detail-actions">
+            <a class="btn" href="{% url 'food:place_update' place.pk %}">Edit</a>
+            <a class="btn btn-danger" href="{% url 'food:place_delete' place.pk %}">Delete</a>
+            <a class="btn btn-secondary" href="{% url 'food:place_list' %}">Back to list</a>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

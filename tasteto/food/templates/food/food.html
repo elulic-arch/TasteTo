@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+{% extends "food/base.html" %}
+
+{% block content %}
+<h1>Food Home</h1>
+<p>Welcome to TasteTo!</p>
+{% endblock %}

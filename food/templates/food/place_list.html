@@ -1,27 +1,30 @@
 {% extends "base.html" %}
-{% load static %}
-
 {% block title %}Places{% endblock %}
 
 {% block content %}
+
 <h1>Toronto Food Places</h1>
 
-<div class="container">
-    {% if places %}
-        {% for place in places %}
-            <div class="place-card">
-                {% if place.image %}
-                    <img src="{{ place.image.url }}" alt="{{ place.name }}">
-                {% endif %}
-                <h2>{{ place.name }}</h2>
-                <a href="{% url 'food:place_detail' place.pk %}">View Details</a>
-            </div>
-        {% endfor %}
-    {% else %}
-        <p>No places added yet.</p>
-    {% endif %}
-</div>
+{% if places %}
+    {% for place in places %}
+        <div class="place-card">
 
-<a href="{% url 'food:place_create' %}" class="btn">Add New Place</a>
+            {% if place.image %}
+                <img src="{{ place.image.url }}" alt="{{ place.name }}">
+            {% endif %}
+
+            <div>
+                <h2>{{ place.name }}</h2>
+                <a class="btn" href="{% url 'food:place_detail' place.pk %}">View Details</a>
+            </div>
+
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No places added yet.</p>
+{% endif %}
+
+<a class="btn" href="{% url 'food:place_create' %}">Add New Place</a>
 
 {% endblock %}
+

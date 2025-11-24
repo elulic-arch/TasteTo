@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Add Place - TasteTo{% endblock %}
+
+{% block content %}
+<section class="container form-section">
+    <h1>Add a New Place</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn" type="submit">Save</button>
+    </form>
+
+    <a class="back-link" href="{% url 'food:place_list' %}">← Back to list</a>
+</section>
+{% endblock %}

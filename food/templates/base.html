@@ -6,10 +6,11 @@
     <title>{% block title %}My Site{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body>
 
+<body>
+    
 <header>
-    <nav>
+    <nav class="navbar container">
         <a href="{% url 'food:place_list' %}">Home</a>
 
         {% if user.is_authenticated %}
@@ -21,13 +22,12 @@
     </nav>
 </header>
 
-<main>
-    {% block content %}
-    {% endblock %}
+<main class="container">
+    {% block content %}{% endblock %}
 </main>
 
-<footer>
-    <p>&copy; 2025 My Site</p>
+<footer class="container">
+    <p>© 2025 My Site</p>
 </footer>
 
 </body>
